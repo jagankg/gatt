@@ -127,7 +127,11 @@ func (a *Advertisement) unmarshall(b []byte) error {
 		case typeManufacturerData:
 			a.ManufacturerData = make([]byte, len(d))
 			copy(a.ManufacturerData, d)
-		// case typeServiceData16,
+		case typeServiceData16:
+			a.ServiceData.UUID = UUID{d[:2]}
+			e := d[2:]
+			a.ServiceData.Data = make([]byte, len(e))
+			copy(a.ServiceData.Data, e)
 		// case typeServiceData32,
 		// case typeServiceData128:
 		default:
