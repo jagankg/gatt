@@ -78,7 +78,7 @@ type Advertisement struct {
 
 // This is only used in Linux port.
 func (a *Advertisement) unmarshall(b []byte) error {
-	log.Printf("ADVT DATA - % X", b)
+	/*log.Printf("ADVT DATA - % X", b)*/
 	// Utility function for creating a list of uuids.
 	uuidList := func(u []UUID, d []byte, w int) []UUID {
 		for len(d) > 0 {
