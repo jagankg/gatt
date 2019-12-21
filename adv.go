@@ -95,7 +95,7 @@ func (a *Advertisement) unmarshall(b []byte) error {
 		}
 		l, t := b[0], b[1]
 		if len(b) < int(1+l) {
-			fmt.Printf("Invalid advertise data found, size=%d, l = %d, t = %d",
+			fmt.Printf("Invalid advertise data found, size=%d, l = %d, t = %d\n",
 				len(b), l, t)
 			return errors.New("invalid advertise data")
 		}
