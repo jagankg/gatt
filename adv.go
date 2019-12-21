@@ -95,10 +95,11 @@ func (a *Advertisement) unmarshall(b []byte) error {
 		}
 		l, t := b[0], b[1]
 		if len(b) < int(3+l) {
-			return errors.New("invalid advertise data")
 			fmt.Printf("Invalid advertise data found, size=%d, l = %d, t = %d",
 				len(b), l, t)
+			return errors.New("invalid advertise data")
 		}
+
 		d := b[2 : 1+l]
 		switch t {
 		case typeFlags:
